@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Juba - AI Tutor for Remote Learning</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body class="min-h-screen">
+    <div class="card">
+        <!-- University Logo -->
+        <img src="bot.jpg" alt="UNIVERSITY OF JUBA Logo" class="logo">
+        <h1 class="text-2xl font-bold mt-2">UNIVERSITY OF JUBA</h1>
+        <p class="text-lg">AI Tutor for Remote Learning</p>
+    </div>
+
+    <!-- Rest of your HTML content -->
+</body>
+</html>
+        <!-- Navigation -->
+        <div class="nav-container">
+            <div class="nav-item" id="nav-home">Home</div>
+            <div class="nav-item" id="nav-about">About</div>
+            <div class="nav-item" id="nav-services">Services</div>
+            <div class="nav-item" id="nav-schools">Schools</div>
+            <div class="nav-item" id="nav-developers">Developers</div>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registrationForm" class="form-container">
+            <h2 class="welcome-heading">Welcome to AI Learning Tutor</h2>
+            <p class="text-center mb-6">To continue with us please provide us your details</p>
+            
+            <form id="studentForm" class="space-y-4">
+                <div>
+                    <label for="name" class="block mb-2">Name:</label>
+                    <input type="text" id="name" class="w-full p-3 border rounded-md text-base" required>
+                </div>
+                
+                <div>
+                    <label for="email" class="block mb-2">Email:</label>
+                    <input type="email" id="email" class="w-full p-3 border rounded-md text-base" required>
+                </div>
+                
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-md w-auto mx-auto block">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        <!-- Chat Interface -->
+        <div id="chatInterface" class="container">
+            <h2 class="welcome-heading">AI Learning Assistant</h2>
+            <p class="text-center mb-4">Hello <span id="studentName"></span>, what would you like to learn about today?</p>
+            
+            <form id="questionForm" class="space-y-4">
+                <div>
+                    <label for="question" class="block mb-2">Your Question:</label>
+                    <textarea id="question" rows="4" class="w-full p-3 border rounded-md text-base" placeholder="Ask any academic question..." required></textarea>
+                </div>
+                
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-md w-auto mx-auto block">
+                    Get Answer
+                </button>
+            </form>
+            
+            <div id="loading" class="loading hidden">
+                <div class="mr-2">Getting your answer</div>
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div id="response" class="mt-6 hidden">
+                <div class="flex items-start space-x-3">
+                    <div class="ai-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0070f3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <div class="w-full">
+                        <div class="font-medium">AI Tutor</div>
+                        <div id="responseContent" class="response-content mt-1 inner-card"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="backButton" class="text-blue-500 hover:text-blue-600 font-medium mx-auto block">
+                Ask Another Question
+            </button>
+        </div>
+
+        <!-- About Section -->
+        <div id="aboutSection" class="container">
+            <h2 class="welcome-heading">About the AI Tutor</h2>
+            <div class="inner-card">
+                <p class="mb-4">The University of Juba AI Tutor is a cutting-edge educational tool designed to support students in their academic journey. Our AI-powered learning assistant provides instant answers to academic questions across various disciplines.</p>
+                
+                <h3 class="text-lg font-bold mb-2">How It Works</h3>
+                <p class="mb-4">The AI Tutor uses advanced natural language processing technology to understand your questions and generate comprehensive, educational responses. It can help with a wide range of subjects including mathematics, sciences, humanities, engineering, and more.</p>
+                
+                <h3 class="text-lg font-bold mb-2">Benefits for Students</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>24/7 access to educational support</li>
+                    <li>Instant answers to complex academic questions</li>
+                    <li>Structured explanations with examples</li>
+                    <li>Support for all University of Juba courses</li>
+                    <li>Enhanced learning experience</li>
+                </ul>
+                
+                <h3 class="text-lg font-bold mb-2">Our Mission</h3>
+                <p>To empower University of Juba students with accessible, high-quality educational support that enhances learning outcomes and academic success.</p>
+            </div>
+            <button id="backToHomeFromAbout" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md mx-auto block mt-4">
+                Back to Home
+            </button>
+        </div>
+
+        <!-- Services Section -->
+        <div id="servicesSection" class="container">
+            <h2 class="welcome-heading">Our Services</h2>
+            
+            <div class="inner-card mb-4">
+                <h3 class="text-lg font-bold mb-2">Academic Question Answering</h3>
+                <p>Get comprehensive answers to questions from any academic field, with detailed explanations and examples.</p>
+            </div>
+            
+            <div class="inner-card mb-4">
+                <h3 class="text-lg font-bold mb-2">Concept Explanations</h3>
+                <p>Complex academic concepts explained in clear, easy-to-understand language with relevant examples.</p>
+            </div>
+            
+            <div class="inner-card mb-4">
+                <h3 class="text-lg font-bold mb-2">Problem-Solving Assistance</h3>
+                <p>Step-by-step guidance for solving academic problems across mathematics, physics, chemistry, and more.</p>
+            </div>
+            
+            <div class="inner-card mb-4">
+                <h3 class="text-lg font-bold mb-2">Research Support</h3>
+                <p>Help with research methodologies, literature reviews, and academic writing techniques.</p>
+            </div>
+            
+            <div class="inner-card">
+                <h3 class="text-lg font-bold mb-2">Exam Preparation</h3>
+                <p>Assistance with exam preparation through practice questions, concept reviews, and study strategies.</p>
+            </div>
+            
+            <button id="backToHomeFromServices" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md mx-auto block mt-4">
+                Back to Home
+            </button>
+        </div>
+
+        <!-- Schools Section -->
+        <div id="schoolsSection" class="container">
+            <h2 class="welcome-heading">Schools and Departments</h2>
+            
+            <div class="school-card">
+                <h3>College of Computer Science & Information Technology</h3>
+                <div class="department">Department of Computer Science</div>
+                <div class="department">Department of Information Technology</div>
+                <div class="department">Department of Cyber Security</div>
+                <div class="department">Department of Artificial Intelligent</div>
+            </div>
+
+            <div class="school-card">
+                <h3>College of Natural Resources and Environmental Studies</h3>
+                <div class="department">Department of Forestry</div>
+                <div class="department">Department of Wildlife Sciences</div>
+                <div class="department">Department of Environmental Studies</div>
+                <div class="department">Department of Fisheries</div>
+            </div>
+            
+            <div class="school-card">
+                <h3>School of Medicine</h3>
+                <div class="department">Department of Clinical Medicine</div>
+                <div class="department">Department of Surgery</div>
+                <div class="department">Department of Public Health</div>
+                <div class="department">Department of Pharmacy</div>
+            </div>
+            
+            <div class="school-card">
+                <h3>College of Engineering</h3>
+                <div class="department">Department of Civil Engineering</div>
+                <div class="department">Department of Electrical Engineering</div>
+                <div class="department">Department of Mechanical Engineering</div>
+                <div class="department">Department of Computer Engineering</div>
+            </div>
+            
+            <div class="school-card">
+                <h3>School of Management Sciences</h3>
+                <div class="department">Department of Business Administration</div>
+                <div class="department">Department of Accounting</div>
+                <div class="department">Department of Economics</div>
+                <div class="department">Department of Public Administration</div>
+            </div>
+            
+            <div class="school-card">
+                <h3>College of Social and Economic Studies</h3>
+                <div class="department">Department of Rural Development</div>
+                <div class="department">Department of Community Development</div>
+                <div class="department">Department of Social Work</div>
+            </div>
+            
+            <button id="backToHomeFromSchools" class="bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-md mx-auto block mt-4">
+                Back to Home
+            </button>
+        </div>
+
+        <!-- Developers Section -->
+<div id="developersSection" class="container">
+    <h2 class="welcome-heading">Our Development Team</h2>
+    
+    <!-- Developer Cards with Images and Links -->
+    <div class="developer-card">
+        <a href="#" class="developer-link">
+            <img src="badeng.jpg" alt="Badeng Lat" class="developer-image">
+            <div class="font-bold">Badeng Lat GatLuak</div>
+            <div class="text-sm"></div>
+        </a>
+    </div>
+    
+    <div class="developer-card">
+        <a href="#" class="developer-link">
+            <img src="Philip.jpg" alt="Phillip Mayom" class="developer-image">
+            <div class="font-bold">Phillip Mayom</div>
+            <div class="text-sm"></div>
+        </a>
+    </div>
+    
+    <div class="developer-card">
+        <a href="#" class="developer-link">
+            <img src="Mary Angry.JPG" alt="Mary Anger" class="developer-image">
+            <div class="font-bold">Mary Anger</div>
+            <div class="text-sm"></div>
+        </a>
+    </div>
+    
+    <div class="developer-card">
+        <a href="#" class="developer-link">
+            <img src="Buoi Abraham.JPG" alt="Buoi Abraham" class="developer-image">
+            <div class="font-bold">Buoi Abraham</div>
+            <div class="text-sm"></div>
+        </a>
+    </div>
+    
+    <div class="developer-card">
+        <a href="#" class="developer-link">
+            <img src="Athony.jpg" alt="Anthony" class="developer-image">
+            <div class="font-bold">Anthony</div>
+            <div class="text-sm"></div>
+        </a>
+    </div>
+
+        <!-- Footer -->
+        <div class="mt-8 pt-4 border-t border-white dark:border-gray-700 text-center text-sm text-white">
+            © 2025 University of Juba. All rights reserved.
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
